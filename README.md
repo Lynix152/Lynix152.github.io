@@ -1,3 +1,8 @@
 # Lynix152.github.io
 
-# das ist ein kleiner Test
+# Website comming soon
+Über mich
+Lebenslauf
+Portfolio
+Kontakt
+Projekte
