@@ -7,6 +7,41 @@ html {
   line-height: 1.4;
 }
 
+/* Hintergrundanimation für flüssige Farben */
+body {
+  position: relative;
+  margin: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  background: linear-gradient(180deg, #000000, #1a1a1a, #333333, #4d4d4d);
+  background-size: 100% 300%; /* Vergrößerung, um den Scroll-Effekt zu erzeugen */
+  animation: scroll-background 10s infinite alternate; /* Backup-Animation */
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Keyframe für Backup-Animation */
+@keyframes scroll-background {
+  0% {
+    background-position: top;
+  }
+  100% {
+    background-position: bottom;
+  }
+}
+
+/* Dynamische Scroll-Änderung */
+body.scrolling {
+  background-attachment: fixed;
+  background-position: center top;
+  transition: background-position 0.3s ease-out;
+}
+
+
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none;
@@ -33,12 +68,6 @@ img,
 svg,
 video {
   vertical-align: middle;
-}
-
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
 }
 
 textarea {
@@ -74,10 +103,6 @@ textarea {
   width: auto;
 }
 
-.invisible {
-  visibility: hidden;
-}
-
 .clearfix::before,
 .clearfix::after {
   content: "";
@@ -88,90 +113,24 @@ textarea {
   clear: both;
 }
 
-/* Responsive Design */
-@media only screen and (min-width: 35em) {
-}
-
-@media print,
-(-webkit-min-device-pixel-ratio: 1.25),
-(min-resolution: 1.25dppx),
-(min-resolution: 120dpi) {
-}
-
-@media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
-
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
-  }
-
-  pre {
-    white-space: pre-wrap !important;
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
-}
-
 /* NavBar Styling */
 .navbar {
-  background-color: #efefef;
-  color: black;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
   border-radius: 15px;
   padding: 1em 0;
   position: sticky;
   top: 0;
   z-index: 1000;
   width: 100%;
-  box-shadow: 0px 2px 5px rgba(182, 130, 130, 0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .navbar .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 12000px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1em;
 }
@@ -179,7 +138,7 @@ textarea {
 .navbar .logo {
   font-size: 1.5em;
   font-weight: bold;
-  color: black;
+  color: white;
   text-decoration: none;
 }
 
@@ -196,7 +155,7 @@ textarea {
 }
 
 .navbar .nav-links a {
-  color: black;
+  color: white;
   text-decoration: none;
   font-size: 1em;
   position: relative;
@@ -209,7 +168,7 @@ textarea {
   bottom: -3px;
   width: 0;
   height: 2px;
-  background-color: red;
+  background-color: #f90;
   transition: width 0.3s ease-in-out;
 }
 
@@ -217,27 +176,86 @@ textarea {
   width: 100%;
 }
 
-/* Background Highlight */
-body {
-  position: relative;
-  margin: 0;
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   height: 100vh;
-  overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
+.hero .profile {
+  z-index: 2;
+  text-align: center;
+  color: white;
+}
+
+.hero .profile-picture {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  margin-bottom: 1em;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin: 0.5em 0;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.hero .social-icons a {
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.hero .social-icons img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s;
+}
+
+.hero .social-icons img:hover {
+  transform: scale(1.2);
+}
+
+/* Background Highlight */
 .background-highlight {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to bottom, rgb(224, 158, 158), rgb(186, 205, 239));
-  z-index: 1;
+  background: radial-gradient(circle, rgba(36, 36, 36, 1) 0%, rgba(18, 18, 18, 1) 100%);
+  z-index: 0;
 }
 
 .content {
   position: relative;
   z-index: 2;
   padding: 20px;
-  color: white;
+  color: #ffffff;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+  .navbar .nav-links {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  .hero p {
+    font-size: 1em;
+  }
 }
