@@ -259,3 +259,32 @@ textarea {
     font-size: 1em;
   }
 }
+
+
+#impressum {
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 50px 20px;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+#impressum h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #f0f0f0;
+}
+
+#impressum p {
+  margin: 10px 0;
+}
+
+#impressum a {
+  color: #f0f0f0;
+  text-decoration: underline;
+}
+
+#impressum small {
+  font-size: 0.8em;
+  color: #cccccc;
+}
