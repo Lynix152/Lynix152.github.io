@@ -246,9 +246,11 @@ textarea {
 }
 
 
+
+
 /* NavBar Styling */
 .navbar {
-  background-color: #ffffff;
+  background-color: #f8ecec;
   color: black;
   padding: 1em 0;
   position: sticky;
@@ -263,7 +265,7 @@ textarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 12000px;
   margin: 0 auto;
   padding: 0 1em;
 }
@@ -291,9 +293,20 @@ textarea {
   color: black;
   text-decoration: none;
   font-size: 1em;
-  transition: color 0.3s;
+  position: relative;
 }
 
-.navbar .nav-links a:hover {
-  color: #007BFF;
+.navbar .nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: red;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar .nav-links a:hover::after {
+  width: 100%;
 }
