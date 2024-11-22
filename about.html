@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+
+    <!-- CSS innerhalb der HTML-Datei -->
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Juana L', serif;
+            color: #333;
+            background-color: #ffebeb;
+        }
+
+        h1 {
+            font-size: 6em;
+            font-weight: normal;
+            margin: 0 0 20px;
+            color: #000000;
+        }
+
+        .subtitle {
+            font-size: 1.25em;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        /* About Section */
+        .about-section {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Left Image Section */
+        .about-image-left {
+            flex: 1;
+            background-color: #f8f5f3;
+            position: static;
+            overflow: hidden;
+        }
+
+        .about-image-left img {
+            width: 95%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Right Text Section */
+        .about-content {
+            flex: 1;
+            padding: 50px;
+            background-color: #f8f5f3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .description {
+            margin-top: 20px;
+            font-size: 1em;
+            color: #555;
+        }
+
+        /* Media Query für kleinere Bildschirme */
+        @media (max-width: 768px) {
+            .about-section {
+                flex-direction: column;
+            }
+
+            .about-image,
+            .about-content {
+                flex: unset;
+                height: 50vh;
+            }
+
+            .about-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="about-section">
+    <!-- Left Side (Image Section) -->
+    <div class="about-image-left">
+        <img src="pexels-steve-29450017.jpg" alt="Artistic Display">
+    </div>
+
+    <!-- Right Side (Text Section) -->
+    <div class="about-content">
+        <header>
+            <h1>About Me.</h1>
+            <p class="subtitle">
+                Code with passion, problem solving with precision - on the way to shaping the digital world.
+            </p>
+        </header>
+        <p class="description">
+            Hi there! I’m a student with a keen interest in technology and innovation.
+            Programming has been my favorite way of expressing creativity, and I enjoy working on challenging problems in fields like operating systems and machine learning.
+            I value learning and constantly strive to improve my skills, whether by contributing to projects, reading about new advancements, or experimenting with new ideas.
+        </p>
+        <p class="description">
+            When I’m not coding, you can find me exploring nature, playing games, or engaging in creative hobbies.
+            I also enjoy reading and playing the accordion. Though I’m still in school, I make the most of my time outside the classroom to pursue my personal interests and grow my skills.
+            I love balancing both my academic and creative endeavors, always learning something new along the way.
+        </p>
+    </div>
+</div>
+</body>
+
+</html>
