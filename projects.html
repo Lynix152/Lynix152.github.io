@@ -1,10 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+
+    <!-- CSS innerhalb der HTML-Datei -->
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #f0f0f0;
+            background: linear-gradient(180deg, #2d2d2d, #3b3b3b, #4c4c4c); /* Weniger intensives Schwarz */
+            background-size: 100% 300%;
+            animation: scroll-background 10s infinite alternate;
+            overflow-x: hidden;
+            padding-top: 70px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes scroll-background {
+            0% {
+                background-position: top;
+            }
+            100% {
+                background-position: bottom;
+            }
+        }
+
+        h1, h2 {
+            font-size: 3em;
+            font-weight: 700;
+            margin: 0 0 20px;
+            color: #fff;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #e1e1e1;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .projects-section {
+            display: flex;
+            flex-direction: column; /* Boxen untereinander */
+            align-items: center; /* Zentriere Boxen horizontal */
+            padding: 30px;
+            justify-content: center;
+        }
+
+        .project-box {
+            width: 200%;
+            max-width: 900px;
+            background-color: rgba(63, 50, 50, 0.7);
+            padding: 20px;
+            margin: 15px 0; /* Abstand zwischen den Boxen */
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box;
+            height: 320px;
+            overflow: hidden;
+        }
+
+        .project-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-box h2 {
+            font-size: 1.8em;
+            color: #fff;
+        }
+
+        .description {
+            color: #e1e1e1;
+            font-size: 1.1em;
+            text-align: left;
+            margin-top: 10px;
+            height: 120px;
+            overflow-y: auto;
+        }
+
+        /* Media Query für kleinere Bildschirme */
+        @media (max-width: 768px) {
+            .project-box {
+                width: 90%;
+            }
+
+            h1, h2 {
+                font-size: 2.5em;
+            }
+
+            .subtitle {
+                font-size: 1.25em;
+            }
+
+            .description, ul li {
+                font-size: 1em;
+            }
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 1); /* Keine Transparenz mehr */
+            color: white;
+            border-radius: 5px;
+            padding: 1em 0;
+            position: fixed; /* Navbar fixiert oben */
+            top: 0;
+            left: 0; /* Links ausgerichtet */
+            width: 100%; /* Volle Breite */
+            z-index: 1000; /* Sicherstellen, dass die Navbar oben bleibt */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optionaler Schatten für bessere Sichtbarkeit */
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 100%; /* Maximale Breite des Containers */
+            margin: 0 auto;
+            padding: 0 1em;
+        }
+
+        .navbar .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5em;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar .nav-links li {
+            display: inline;
+        }
+
+        .navbar .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            position: relative;
+        }
+
+        .navbar .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 0;
+            height: 2px;
+            background-color: #f90;
+            transition: width 0.3s ease-in-out;
+        }
+
+        .navbar .nav-links a:hover::after {
+            width: 100%;
+        }
+
+    </style>
 </head>
+
 <body>
+<div class="projects-section">
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Mathias</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <h1>My Projects</h1>
+        <p class="subtitle">
+            Exploring creative, challenging, and innovative coding projects.
+        </p>
+    </header>
+
+    <div class="project-box">
+        <h2>BoneSimulation</h2>
+        <p class="description">
+            A simulation program for bone structure modeling, used in medical research for improving prosthetics. This project helped in visualizing complex anatomical data for better understanding.
+        </p>
+    </div>
+
+    <div class="project-box">
+        <h2>Parallelized Monte Carlo Simulation with MPI</h2>
+        <p class="description">
+            A high-performance computing project designed to model complex statistical systems using the Monte Carlo method. This project utilizes MPI parallelization for increased efficiency.
+        </p>
+    </div>
+
+    <div class="project-box">
+        <h2>Rust UEFI</h2>
+        <p class="description">
+            A low-level project to create a UEFI (Unified Extensible Firmware Interface) system using Rust. This enhances boot processes with more security and performance optimizations.
+        </p>
+    </div>
+
+    <div class="project-box">
+        <h2>Instructions Set Simulator of RISC-V</h2>
+        <p class="description">
+            A tool simulating the RISC-V instruction set architecture, perfect for understanding CPU operations and assembly language programming. It provides insights into processor behavior.
+        </p>
+    </div>
+
+    <div class="project-box">
+        <h2>Parallelized Small File Analysis Program with MPI and OpenMP</h2>
+        <p class="description">
+            A tool designed for efficiently analyzing small files in parallel, leveraging MPI and OpenMP to process large datasets in a fraction of the time.
+        </p>
+    </div>
+
+    <div class="project-box">
+        <h2>Various Discord and Telegram Bots (Outdated)</h2>
+        <p class="description">
+            A collection of fun and useful bots for automating tasks and interacting with users on Discord and Telegram. These bots are no longer maintained but serve as a learning experience.
+        </p>
+    </div>
+</div>
 
 </body>
+
 </html>
